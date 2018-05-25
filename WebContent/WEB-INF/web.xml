@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>rms</display-name>
+  <welcome-file-list>
+    <welcome-file>welcome.html</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>dbUser</param-name>
+    <param-value>mitrais</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbPassword</param-name>
+    <param-value>mitrais123</param-value>
+  </context-param>
+  <context-param>
+    <param-name>dbURL</param-name>
+    <param-value>jdbc:mysql://localhost:3306/sonoo</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4j-config</param-name>
+    <param-value>WEB-INF/log4j.xml</param-value>
+  </context-param>  
+  
+  <servlet>
+    <servlet-name>UnitListServlet</servlet-name>
+    <servlet-class>rms.UnitListServlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+    <servlet-name>UnitListServlet</servlet-name>
+    <url-pattern>/list</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>TestingGet</servlet-name>
+    <servlet-class>rms.TestingGet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	
+    <servlet-name>TestingGet</servlet-name>
+    <url-pattern>/products</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>TestingDetailUnitServlet</servlet-name>
+    <servlet-class>rms.TestingDetailUnitServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	
+    <servlet-name>TestingDetailUnitServlet</servlet-name>
+    <url-pattern>/detail</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>DeleteLevelServlet</servlet-name>
+    <servlet-class>rms.DeleteLevelServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	
+    <servlet-name>DeleteLevelServlet</servlet-name>
+    <url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>rms.UpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/update</url-pattern>
+	</servlet-mapping>
+
+</web-app>
